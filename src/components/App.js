@@ -20,7 +20,22 @@ export default function App() {
   // 👉 5- Build a `changeStatus` function that takes an id and
   // changes the `married` from true to false and viceversa
   const changeStatus = id => {
-    console.log(id);
+    /**
+     * 1.) Loop! (for, forEach, map, filter, find, reduce)
+     * 2.) When we find the correct user
+     *   a.) Switch marital status to !
+     * 3.) DO NOT MUTATE STATE DIRECTLY
+     * 4.) Set state!
+     */
+
+  const updatedFriends = friends.map(fr => {
+    if (fr.id === id) {
+        return { ...fr, married: !fr.married };
+      } else {
+        return fr;
+      }
+    })
+    setFriends(updatedFriends);
   }
 
   // STRETCH - Make a helper function that returns
@@ -39,6 +54,7 @@ export default function App() {
     </div>
   )
 }
+
 
 /**
  * props => data passed from parent to child (component)

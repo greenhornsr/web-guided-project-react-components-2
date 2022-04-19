@@ -15,6 +15,9 @@ export default function Friend(props) {
           <div>Likes:
             <ul>
               {/* 👉 3- Loop over the friend's hobbies and generate <li/> elements as you go */}
+              { props.myFriend.hobbies.map((hob, idx) => {
+                return <li key={idx}>{hob}</li>
+              })}
             </ul>
           </div>
         </div>
@@ -23,7 +26,7 @@ export default function Friend(props) {
           {/* 👉 3- What data does the PetsList need? */}
           {/* What is the exact name of the prop/props it expects? */}
           {/* Is the data around here somewhere so I may pass it? */}
-          <PetsList />
+          <PetsList pets={props.myFriend.pets} />
         </div>
       </div>
     </div>
