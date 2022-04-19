@@ -39,3 +39,8 @@ export default function App() {
     </div>
   )
 }
+
+/**
+ * props => data passed from parent to child (component)
+ * state => data that "lives" in the component
+ */
