@@ -1,22 +1,27 @@
 // This is the top-level component
 // so we'll keep application state at this level.
 // 👉 1- Import the state hook!
-import React from 'react'
+import React, { useState } from 'react'
 import FriendsList from './FriendsList'
 import Search from './Search'
 // 👉 2- Import the dummy data that will power the application.
 // (Tomorrow we'll fetch the data from an API instead.)
-
+import FriendData from '../dummy-data/friends'
 
 export default function App() {
   // 👉 3- Initialize a slice of state to keep track of the data
   // using the dummy data as the initial value of the slice of state
+  const [friend, setFriend] = useState(FriendData)
 
   // 👉 4- Initialize a slice to keep track of the value of the search box
   // using an empty string as the initial value of the slice
+  const [searchInput, setSearchInput] = useState('')
 
   // 👉 5- Build a `changeStatus` function that takes an id and
   // changes the `married` from true to false and viceversa
+  const changeStatus = (id) => {
+    setFriend(!FriendData.married)
+  }
 
   // STRETCH - Make a helper function that returns
   // a filtered array of friends data (filtering by search term)
