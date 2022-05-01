@@ -21,7 +21,7 @@ export default function App() {
   // changes the `married` from true to false and viceversa
   const changeStatus = (id) => {
       setFriend(friends.map(friend => {
-        return friend.id === id ? {...friend, married: !friend.married} : `No such friend with id: ${id}`
+        return friend.id === id ? {...friend, married: !friend.married} : friend
     }))
   }
 
@@ -36,7 +36,7 @@ export default function App() {
 
       {/* 👉 7- Render the FriendsList component */}
       {/* What prop/props does FriendsList need? */}
-      <FriendsList friendData={friendData} />
+      <FriendsList friendsData={friends} changeFriendMarriedStatus={changeStatus} />
     </div>
   )
 }
